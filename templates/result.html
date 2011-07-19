@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ÖMYS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <style>
+body {
+  padding:0;
+  text-align:center;
+}
+
+h1, h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 48px;
+  color: #930;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: xx-large;
+  color: #039
+}
+
+table{
+  margin: 0 auto;
+}
+
+td {
+  text-align: left;
+}
+
+.err {
+  color: red;
+}
+    </style>
+  </head>
+  <body>
+    <h1>ÖMYS</h1>
+    <h2>2051 ÖĞĞ Test Results</h2>
+    <p style="color:#039;margin:0">(18.06.2051)</p>
+    {{#form}}
+    <p>Please enter your identification number and password</p>
+    <form onsubmit="sb()">
+      <table border="0" cellpadding="3" cellspacing="0">
+        <tr><th><label for="idn">ID Number</label></th>
+          <td><input type="text" id="idn"/>
+          <td class="err">{{idnErr}}</td></tr>
+        <tr><th><label for="pass">Password</label></th>
+          <td><input type="password" name="password" id="pass"/>
+          <td class="err">{{passErr}}</td></tr>
+      </table>
+      <p><input type="submit"/></p>
+      <p class="err">{{formErr}}</p>
+    </form>
+    {{/form}}
+    {{#doc}}
+    <p>
+    <table border="1" cellspacing="2" cellpadding="1">
+      <tr><th>ID Number</th>
+        <td>{{_id}}</td></tr>
+      <tr><th>Name</th>
+        <td>{{name}}</td></tr>
+      <tr><th>Test Date</th>
+        <td>20 Jun 2021</td></tr>
+    </table>
+    </p>
+    <p>
+    <table border="1" cellspacing="2" cellpadding="1">
+      <tr><th></th>
+        <th>Score</th>
+        <th>Rank</th>
+        <th>Number of Applicants</th></tr>
+      {{#q}}
+      <tr><th>Quantitative</th>
+        <td>{{s}}</td>
+        <td>{{r}}</td>
+        <td>555</td></tr>
+      {{/q}}
+      {{#v}}
+      <tr><th>Verbal</th>
+        <td>{{s}}</td>
+        <td>{{r}}</td>
+        <td>555</td></tr>
+      {{/v}}
+      {{#ew}}
+      <tr><th>Quantitative</th>
+        <td>{{s}}</td>
+        <td>{{r}}</td>
+        <td>555</td></tr>
+      {{/ew}}
+    </table>
+    </p>
+    <p>
+    <table border="1" cellspacing="2" cellpadding="1">
+      <tr><th></th>
+        <th colspan="4">Number of Answers</th></tr>
+      <tr><th></th>
+        <th>Quantitative - 1</th>
+        <th>Quantitative - 2</th>
+        <th>Verbal - 1</th>
+        <th>Verbal - 2</th></tr>
+      {{#t}}
+      <tr><th>Correct</th>
+        <td>{{q1}}</td>
+        <td>{{q2}}</td>
+        <td>{{v1}}</td>
+        <td>{{v2}}</td></tr>
+      {{/t}}
+      {{#f}}
+      <tr><th>Incorrect</th>
+        <td>{{q1}}</td>
+        <td>{{q2}}</td>
+        <td>{{v1}}</td>
+        <td>{{v2}}</td></tr>
+      {{/f}}
+    </table>
+    </p>
+    <p>
+      <a href="javascript:history.back()">Back</a>
+    </p>
+    {{/doc}}
+  </body>
+  <script type="text/javascript">
+  function sb() {
+    var f = document.forms[0];
+    f.setAttribute("action", document.getElementById("idn").value);
+  }
+  </script>
+</html>

@@ -22,3 +22,13 @@ Getting to the login screen hardly means anything w/o data. In order to load som
     python load.py ra
 
 After that you can use any number divisable by 3 between 1M and 10M as login and pass.
+
+Demo
+----
+
+The app has been deployed [here](http://racouch.erdemagaoglu.com/). But it is not full with 3M records, there are only 90000. You should try any of the following username:password pairs
+
+    1000002:1000002
+    1000005:1000005
+    ...
+    1269999:1269999

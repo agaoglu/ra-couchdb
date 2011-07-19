@@ -1,0 +1,4 @@
+[
+{"from":"", "to":"_show/result/"},
+{"from":"*", "to":"_show/result/*"}
+]

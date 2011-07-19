@@ -20,3 +20,5 @@ Loading Data
 Getting to the login screen hardly means anything w/o data. In order to load some sample results into the db, you can supply your dbname to the script `load.py` as
 
     python load.py ra
+
+After that you can use any number divisable by 3 between 1M and 10M as login and pass.
